@@ -16,6 +16,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+tmp/
+
 # ApprovalTests #
 *.received.txt
 

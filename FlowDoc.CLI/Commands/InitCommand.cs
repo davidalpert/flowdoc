@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Abstractions;
 using System.Linq;
-using System.Text;
+using ManyConsole;
 
 namespace FlowDoc.CLI.Commands
 {
-    public class InitCommand : ICommand<InitOptions>
+    public class InitCommand : ConsoleCommand
     {
         private readonly IFileSystem fileSystem;
 
         public InitCommand(IFileSystem fileSystem)
         {
             this.fileSystem = fileSystem;
+
+            IsCommand("init", "initializes a FlowDoc source tree");
+
+            HasAdditionalArguments(1, "[targetDirectory]");
         }
 
-        public void Execute()
+        public override int Run(string[] remainingArguments)
         {
-            var targetPath = new DirectoryInfo(Options.TargetDirectory);
+            var targetPath = new DirectoryInfo(remainingArguments[0]);
 
             if (targetPath.Exists == false)
             {
@@ -27,6 +31,8 @@ namespace FlowDoc.CLI.Commands
 
             WriteConfig(targetPath);
             WriteTOC(targetPath);
+
+            return 0;
         }
 
         private void WriteConfig(DirectoryInfo targetDir)
@@ -43,18 +49,5 @@ Welcome to FlowDoc, a markdown-based documentation system for describing softwar
 --->
 ");
         }
-
-        public InitOptions Options { get; set; }
-    }
-
-    public class InitOptions
-    {
-        public string TargetDirectory { get; set; }
-    }
-
-    public interface ICommand<TOptions>
-    {
-        void Execute();
-        TOptions Options { get; set; }
     }
 }

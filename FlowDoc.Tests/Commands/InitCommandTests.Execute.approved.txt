@@ -1,4 +1,4 @@
 ﻿[
-    "c:dev\\mydocs\\.config",
-    "c:dev\\mydocs\\toc.md"
+    "c:\\dev\\mydocs\\.config",
+    "c:\\dev\\mydocs\\toc.md"
 ]

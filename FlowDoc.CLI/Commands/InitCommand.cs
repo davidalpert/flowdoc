@@ -18,19 +18,28 @@ namespace FlowDoc.CLI.Commands
             IsCommand("init", "initializes a FlowDoc source tree");
 
             HasAdditionalArguments(1, "[targetDirectory]");
+
+            SkipsCommandSummaryBeforeRunning();
         }
 
         public override int Run(string[] remainingArguments)
         {
-            var targetPath = new DirectoryInfo(remainingArguments[0]);
-
-            if (targetPath.Exists == false)
+            try
             {
-                targetPath.Create();
-            }
+                var targetPath = new DirectoryInfo(remainingArguments[0]);
 
-            WriteConfig(targetPath);
-            WriteTOC(targetPath);
+                if (targetPath.Exists == false)
+                {
+                    targetPath.Create();
+                }
+
+                WriteConfig(targetPath);
+                WriteTOC(targetPath);
+            }
+            catch (Exception ex)
+            {
+                throw new ConsoleHelpAsException(ex.Message);
+            }
 
             return 0;
         }

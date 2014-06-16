@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDoc.CLI", "FlowDoc.CLI\FlowDoc.CLI.csproj", "{45F4D67E-0F79-4675-8FC9-34ACBFFE5FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDoc.Tests", "FlowDoc.Tests\FlowDoc.Tests.csproj", "{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45F4D67E-0F79-4675-8FC9-34ACBFFE5FC1}.Debug|x86.ActiveCfg = Debug|x86
+		{45F4D67E-0F79-4675-8FC9-34ACBFFE5FC1}.Debug|x86.Build.0 = Debug|x86
+		{45F4D67E-0F79-4675-8FC9-34ACBFFE5FC1}.Release|x86.ActiveCfg = Release|x86
+		{45F4D67E-0F79-4675-8FC9-34ACBFFE5FC1}.Release|x86.Build.0 = Release|x86
+		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Debug|x86.ActiveCfg = Debug|x86
+		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Debug|x86.Build.0 = Debug|x86
+		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Release|x86.ActiveCfg = Release|x86
+		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

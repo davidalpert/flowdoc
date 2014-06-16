@@ -67,9 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\BuildCommandTests.cs" />
+    <Compile Include="Commands\RedirectedConsole.cs" />
     <Compile Include="Helpers\DisposableTempFolder.cs" />
     <Compile Include="Commands\InitCommandTests.cs" />
     <Compile Include="Helpers\DisposableTempFolderTests.cs" />
+    <Compile Include="Helpers\TestHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

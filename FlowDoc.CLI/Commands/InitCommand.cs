@@ -15,7 +15,7 @@ namespace FlowDoc.CLI.Commands
 
         public override void Execute(string[] remainingArguments)
         {
-            var targetPath = new DirectoryInfo(remainingArguments[0]);
+            var targetPath = FileSystem.DirectoryInfo.FromDirectoryName(remainingArguments[0]);
 
             if (targetPath.Exists == false)
             {
@@ -26,13 +26,13 @@ namespace FlowDoc.CLI.Commands
             WriteTOC(targetPath);
         }
 
-        private void WriteConfig(DirectoryInfo targetDir)
+        private void WriteConfig(DirectoryInfoBase targetDir)
         {
             var configPath = Path.Combine(targetDir.FullName, ".config");
             FileSystem.File.WriteAllText(configPath, "# Configure flowdoc settings here");
         }
 
-        private void WriteTOC(DirectoryInfo targetDir)
+        private void WriteTOC(DirectoryInfoBase targetDir)
         {
             var path = Path.Combine(targetDir.FullName, @"toc.md");
             FileSystem.File.WriteAllText(path, @"<!---

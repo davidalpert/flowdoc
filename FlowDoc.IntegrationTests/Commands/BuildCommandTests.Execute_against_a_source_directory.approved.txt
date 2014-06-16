@@ -1,0 +1,5 @@
+﻿[
+    "~\\.config",
+    "~\\toc.md",
+    "~\\_build\\index.html"
+]

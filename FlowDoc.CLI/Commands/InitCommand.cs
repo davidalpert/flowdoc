@@ -1,59 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.IO.Abstractions;
 using System.Linq;
-using ManyConsole;
 
 namespace FlowDoc.CLI.Commands
 {
-    public class InitCommand : ConsoleCommand
+    public class InitCommand : FlowDocCommand
     {
-        private readonly IFileSystem fileSystem;
-
-        public InitCommand(IFileSystem fileSystem)
+        public InitCommand(IFileSystem fileSystem) 
+            : base(fileSystem, "init", "initializes a FlowDoc source tree")
         {
-            this.fileSystem = fileSystem;
-
-            IsCommand("init", "initializes a FlowDoc source tree");
-
             HasAdditionalArguments(1, "[targetDirectory]");
-
-            SkipsCommandSummaryBeforeRunning();
         }
 
-        public override int Run(string[] remainingArguments)
+        public override void Execute(string[] remainingArguments)
         {
-            try
-            {
-                var targetPath = new DirectoryInfo(remainingArguments[0]);
+            var targetPath = new DirectoryInfo(remainingArguments[0]);
 
-                if (targetPath.Exists == false)
-                {
-                    targetPath.Create();
-                }
-
-                WriteConfig(targetPath);
-                WriteTOC(targetPath);
-            }
-            catch (Exception ex)
+            if (targetPath.Exists == false)
             {
-                throw new ConsoleHelpAsException(ex.Message);
+                targetPath.Create();
             }
 
-            return 0;
+            WriteConfig(targetPath);
+            WriteTOC(targetPath);
         }
 
         private void WriteConfig(DirectoryInfo targetDir)
         {
             var configPath = Path.Combine(targetDir.FullName, ".config");
-            fileSystem.File.WriteAllText(configPath, "# Configure flowdoc settings here");
+            FileSystem.File.WriteAllText(configPath, "# Configure flowdoc settings here");
         }
 
         private void WriteTOC(DirectoryInfo targetDir)
         {
             var path = Path.Combine(targetDir.FullName, @"toc.md");
-            fileSystem.File.WriteAllText(path, @"<!---
+            FileSystem.File.WriteAllText(path, @"<!---
 Welcome to FlowDoc, a markdown-based documentation system for describing software workflows.
 --->
 ");

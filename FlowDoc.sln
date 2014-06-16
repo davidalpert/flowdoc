@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDoc.CLI", "FlowDoc.CLI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDoc.Tests", "FlowDoc.Tests\FlowDoc.Tests.csproj", "{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDoc.IntegrationTests", "FlowDoc.IntegrationTests\FlowDoc.IntegrationTests.csproj", "{9B2F52C2-F95C-4C6D-877B-4790A68D69FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Debug|x86.Build.0 = Debug|x86
 		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Release|x86.ActiveCfg = Release|x86
 		{36EF963E-1A98-42B4-A2BC-79EA3E8EB475}.Release|x86.Build.0 = Release|x86
+		{9B2F52C2-F95C-4C6D-877B-4790A68D69FC}.Debug|x86.ActiveCfg = Debug|x86
+		{9B2F52C2-F95C-4C6D-877B-4790A68D69FC}.Debug|x86.Build.0 = Debug|x86
+		{9B2F52C2-F95C-4C6D-877B-4790A68D69FC}.Release|x86.ActiveCfg = Release|x86
+		{9B2F52C2-F95C-4C6D-877B-4790A68D69FC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
